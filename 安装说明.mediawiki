@@ -37,7 +37,8 @@ cd lnmp1.2-full
 打开 /usr/local/nginx/conf/vhost/ss.panel.conf
 
 然后修改成这样
-<pre>server
+<pre>
+server
         {
                 listen 80;
                 #listen [::]:80;
