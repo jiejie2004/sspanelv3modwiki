@@ -76,17 +76,14 @@ cd lnmp1.2-full
 </pre>
 然后就是下载程序代码。
 <pre>cd /home/wwwroot/ss.panel
-wget https://git.zhaojin97.cn/glzjin/ss-panel-v3-publicv2/archive/master.tar.gz
-tar xvzf master.tar.gz
+yum install git -y
+git clone https://github.com/glzjin/ss-panel-v3-mod.git ./
 chown -R root:root *
 chmod -R 755 *
 chown -R www:www storage
 </pre>
 修改完了之后，到网站目录下进行一些修改。
 <pre>[root@vultr vhost]# cd /home/wwwroot/ss.panel/
-[root@vultr ss.panel]# ls
-[root@vultr ss.panel]# ls -a
-.  ..  .user.ini
 [root@vultr ss.panel]# chattr -i .user.ini
 [root@vultr ss.panel]# mv .user.ini public
 [root@vultr ss.panel]# cd public
