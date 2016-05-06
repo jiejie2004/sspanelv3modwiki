@@ -85,7 +85,7 @@ server
 然后就是下载程序代码。
 <pre>cd /home/wwwroot/ss.panel
 yum install git -y
-git clone https://github.com/glzjin/ss-panel-v3-mod.git ./
+git clone https://github.com/glzjin/ss-panel-v3-mod.git tmp && mv tmp/.git . && rm -rf tmp && git reset --hard
 chown -R root:root *
 chmod -R 755 *
 chown -R www:www storage
