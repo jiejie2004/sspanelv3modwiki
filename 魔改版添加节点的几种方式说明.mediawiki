@@ -30,7 +30,7 @@ screen -dmS pac ./flora_pac -x "TIHUAN" -p 8974</del></pre>
 
 <a href="https://www.zhaoj.in/wp-content/uploads/2016/04/146105624673c39692e5163cae3105ab865748b560.png"><img class="alignnone size-large wp-image-3506" src="https://www.zhaoj.in/wp-content/uploads/2016/04/146105624673c39692e5163cae3105ab865748b560-1024x297.png" alt="QQ截图20160419165626" width="725" height="210" /></a> <a href="https://www.zhaoj.in/wp-content/uploads/2016/04/146105624762133839cd943a2208e2a859d7c9e791.png"><img class="alignnone size-full wp-image-3507" src="https://www.zhaoj.in/wp-content/uploads/2016/04/146105624762133839cd943a2208e2a859d7c9e791.png" alt="QQ截图20160419165649" width="1393" height="763" /></a>
 
-然后，推荐部署 <a href="https://www.zhaoj.in/read-3357.html">https://www.zhaoj.in/read-3357.html </a>
+然后，推荐部署 <a href="https://github.com/glzjin/ssshell-jar/wiki/">https://github.com/glzjin/ssshell-jar/wiki/ </a>
 
 这个后端，此处不再赘述。记住 nodeid 要和
 
@@ -191,8 +191,7 @@ chkconfig squid on</pre>
 
 子节点搭建的话 参考这里 <a href="https://www.zhaoj.in/read-2904.html">https://www.zhaoj.in/read-2904.html</a>
 
-统计流量的话 看 <a href="https://github.com/KidFeng/ocserv_radius_accounting">https://github.com/KidFeng/ocserv_radius_accounting</a>
-
+统计流量的话 看 <a href="https://mengyang.wang/anyconnect-node-mb/g">https://mengyang.wang/anyconnect-node-mb/</a>
 &nbsp;
 <h3>6.APN 文件</h3>
 给苹果手机用的，
