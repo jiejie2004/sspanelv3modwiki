@@ -150,12 +150,12 @@ OK，然后我们再对这个数据库创建一个用户，用于 ss-panel 通�
 找到readclients一行，设为yes并去掉注释符号#
 <pre>nano /etc/raddb/sites-enabled/default
 </pre>
-authorize段，关掉files，打开sql，也可以把unix关掉
-preacct段，关掉files
-accounting段，打开sql，也可以把unix关掉
-session段，打开sql
-post-auth段，打开sql
-pre-proxy段，关掉files
+authorize段，关掉files，打开sql，也可以把unix关掉<br>
+preacct段，关掉files<br>
+accounting段，打开sql，也可以把unix关掉<br>
+session段，打开sql<br>
+post-auth段，打开sql<br>
+pre-proxy段，关掉files<br>
 
 然后在 phpmyadmin 里执行如下命令。
 <pre>use radius;
