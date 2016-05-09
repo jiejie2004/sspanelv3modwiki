@@ -49,6 +49,12 @@ location / {
                         try_files $uri $uri/ /index.php$is_args$args;
                 }
 </pre>
+
+同时，root那一行改为
+<pre>
+root /home/wwwroot/ss.panel/public;
+</pre>
+
 然后就是下载程序代码。
 <pre>cd /home/wwwroot/ss.panel
 yum install git -y
