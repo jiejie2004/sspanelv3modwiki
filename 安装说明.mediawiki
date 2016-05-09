@@ -75,7 +75,7 @@ OK，重启一下 nginx
 
 8.这一步现在已经不需要。
 
-9.安装 radius ，此处参考了 http://www.zhukun.net/archives/7455，在此表示感谢，但你不用点进去看他的安装方法，看下面的就OK 。此处只介绍怎么进行安装和对接。
+9.安装 radius ，此处参考了 http://www.zhukun.net/archives/7455 ，在此表示感谢，但你不用点进去看他的安装方法，看下面的就OK 。此处只介绍怎么进行安装和对接。
 <pre>yum install perl-DBI freeradius freeradius-mysql freeradius-utils
 cd
 </pre>
