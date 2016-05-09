@@ -79,13 +79,6 @@ OK，重启一下 nginx
 <pre>yum install perl-DBI freeradius freeradius-mysql freeradius-utils
 cd
 </pre>
-然后 编辑配置文件。
-<pre>nano /etc/raddb/radiusd.conf
-</pre>
-
-找到$INCLUDE sql.conf，去掉前面的#；
-
-找到$INCLUDE sql/mysql/counter.conf，去掉前面的#。
 
 
 10.然后我们打开 phpmyadmin ,来配置数据库了。
@@ -123,7 +116,10 @@ OK，然后我们再对这个数据库创建一个用户，用于 ss-panel 通�
 
 然后下面是几个文件的覆盖
 
-<pre>wget https://github.com/glzjin/Radius-install/raw/master/default -O /etc/raddb/sites-enabled/default
+<pre>
+wget https://github.com/glzjin/Radius-install/raw/master/radiusd.conf -O /etc/raddb/radiusd.conf
+
+wget https://github.com/glzjin/Radius-install/raw/master/default -O /etc/raddb/sites-enabled/default
 
 wget https://github.com/glzjin/Radius-install/raw/master/dialup.conf -O /etc/raddb/sql/mysql/dialup.conf
 
