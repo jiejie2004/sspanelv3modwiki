@@ -43,44 +43,11 @@ cd lnmp1.2-full
 
 打开 /usr/local/nginx/conf/vhost/ss.panel.conf
 
-然后修改成这样
+然后添加下面这一段到 server 
 <pre>
-server
-        {
-                listen 80;
-                #listen [::]:80;
-                server_name ss.panel;
-                index index.html index.htm index.php default.html default.htm default.php;
-                root  /home/wwwroot/ss.panel/public;
-
-                include none.conf;
-                #error_page   404   /404.html;
-                location ~ [^/]\.php(/|$)
-                {
-                        # comment try_files $uri =404; to enable pathinfo
-                        try_files $uri =404;
-                        fastcgi_pass  unix:/tmp/php-cgi.sock;
-                        fastcgi_index index.php;
-                        include fastcgi.conf;
-                        #include pathinfo.conf;
-                }
-
-                location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$
-                {
-                        expires      30d;
-                }
-
-                location ~ .*\.(js|css)?$
-                {
-                        expires      12h;
-                }
-
-                location / {
+location / {
                         try_files $uri $uri/ /index.php$is_args$args;
                 }
-
-                access_log off;
-        }
 </pre>
 然后就是下载程序代码。
 <pre>cd /home/wwwroot/ss.panel
@@ -105,16 +72,21 @@ OK，重启一下 nginx
 好，这个暂时到这里，我们待会再回来进行配置。
 
 7.这一步现在已经不需要。
+
 8.这一步现在已经不需要。
-9.安装 radius ，参考 http://www.zhukun.net/archives/7455 。此处只介绍怎么进行安装和对接。
+
+9.安装 radius ，此处参考了 http://www.zhukun.net/archives/7455，在此表示感谢，但你不用点进去看他的安装方法，看下面的就OK 。此处只介绍怎么进行安装和对接。
 <pre>yum install perl-DBI freeradius freeradius-mysql freeradius-utils
 cd
 </pre>
 然后 编辑配置文件。
 <pre>nano /etc/raddb/radiusd.conf
 </pre>
+
 找到$INCLUDE sql.conf，去掉前面的#；
+
 找到$INCLUDE sql/mysql/counter.conf，去掉前面的#。
+
 
 10.然后我们打开 phpmyadmin ,来配置数据库了。
 
@@ -124,7 +96,7 @@ cd
 
 然后解压，导入下面这个文件。
 
-<a href="https://www.zhaojin97.cn/wp-content/uploads/2016/03/4ee929bbfba5feedc4b766b0c93614ce201603250609559975.zip">https://www.zhaojin97.cn/wp-content/uploads/2016/03/4ee929bbfba5feedc4b766b0c93614ce201603250609559975.zip</a>
+<a href="https://github.com/glzjin/Radius-install/raw/master/all.sql">https://github.com/glzjin/Radius-install/raw/master/all.sql</a>
 
 <img src="https://www.zhaojin97.cn/wp-content/uploads/2016/03/aa0d5a26aaa8922ac8163b202733d5da2016032506114155635.png" alt="https://www.zhaojin97.cn/wp-content/uploads/2016/03/aa0d5a26aaa8922ac8163b202733d5da2016032506114155635.png" />
 
@@ -148,56 +120,18 @@ OK，然后我们再对这个数据库创建一个用户，用于 ss-panel 通�
 配置login（用户名），password（密码），radius_db（数据库名）等字段
 
 找到readclients一行，设为yes并去掉注释符号#
-<pre>nano /etc/raddb/sites-enabled/default
-</pre>
-authorize段，关掉files，打开sql，也可以把unix关掉<br>
-preacct段，关掉files<br>
-accounting段，打开sql，也可以把unix关掉<br>
-session段，打开sql<br>
-post-auth段，打开sql<br>
-pre-proxy段，关掉files<br>
 
-然后在 phpmyadmin 里执行如下命令。
-<pre>use radius;
-INSERT INTO radgroupreply (groupname,attribute,op,VALUE) VALUES ('user','Auth-Type',':=','Local');
-INSERT INTO radgroupreply (groupname,attribute,op,VALUE) VALUES ('user','Service-Type',':=','Framed-User');
-INSERT INTO radgroupreply (groupname,attribute,op,VALUE) VALUES ('user','Framed-IP-Address',':=','255.255.255.255');
-INSERT INTO radgroupreply (groupname,attribute,op,VALUE) VALUES ('user','Framed-IP-Netmask',':=','255.255.255.0');
-INSERT INTO radgroupreply (groupname,attribute,op,VALUE) VALUES ('user','Acct-Interim-Interval',':=','600');
-INSERT INTO radgroupcheck (groupname,attribute,op,value) VALUES ('user','Max-Monthly-Traffic',':=','10240000');
-INSERT INTO radgroupcheck (groupname,attribute,op,VALUE) VALUES ('user','Simultaneous-Use',':=','10');
-</pre>
-引用自原博主的话：
-<blockquote>acct-interim-interval是计算流量的间隔（600秒），意味着每隔10分钟记录当前流量
-Max-Monthly-Traffic是每月最大流量，Simultaneous-Use是允许每个用户同时连接的客户端数量</blockquote>
-OK，设置完这里，继续
-<pre>nano /etc/raddb/sql/mysql/dialup.conf
-</pre>
-需要把simul_count_query那几行取消注释。
-<pre>nano /etc/raddb/dictionary
-</pre>
-添加如下两行
-<pre class="">ATTRIBUTE       Max-Monthly-Traffic     3003    integer
-ATTRIBUTE       Monthly-Traffic-Limit   3004    integer 
-</pre>
-<span style="font-size: 18px; line-height: 1.5;">编辑 /etc/raddb/sites-enabled/default </span>
+然后下面是几个文件的覆盖
 
-找到authorize
+<pre>wget https://github.com/glzjin/Radius-install/raw/master/default -O /etc/raddb/sites-enabled/default
 
-在该区域的尾部（即“}”前一行）添加一行monthlytrafficcounter
-<pre>nano /etc/raddb/sql/mysql/counter.conf
+wget https://github.com/glzjin/Radius-install/raw/master/dialup.conf -O /etc/raddb/sql/mysql/dialup.conf
+
+wget https://github.com/glzjin/Radius-install/raw/master/dictionary -O /etc/raddb/dictionary
+
+wget https://github.com/glzjin/Radius-install/raw/master/counter.conf -O /etc/raddb/sql/mysql/counter.conf
 </pre>
-在最后加入
-<pre>sqlcounter monthlytrafficcounter {
-        counter-name = Monthly-Traffic
-        check-name = Max-Monthly-Traffic
-        reply-name = Monthly-Traffic-Limit
-        sqlmod-inst = sql
-        key = User-Name
-        reset = monthly
-        query = "SELECT SUM(acctinputoctets + acctoutputoctets) DIV 1048576 FROM radacct WHERE UserName='%{%k}' AND UNIX_TIMESTAMP(AcctStartTime) > '%b'"
-}
-</pre>
+
 Radius 配置完成，
 <pre>service radiusd start && chkconfig radiusd on
 </pre>
