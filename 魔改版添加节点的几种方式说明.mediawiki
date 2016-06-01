@@ -191,7 +191,7 @@ chkconfig squid on</pre>
 
 子节点搭建的话 参考这里 <a href="https://www.zhaoj.in/read-2904.html">https://www.zhaoj.in/read-2904.html</a>
 
-统计流量的话 看 <a href="https://mengyang.wang/anyconnect-node-mb/g">https://mengyang.wang/anyconnect-node-mb/</a>
+统计流量的话 看 <a href="https://mengyang.wang/anyconnect-node-mb/">https://mengyang.wang/anyconnect-node-mb/</a>
 &nbsp;
 <h3>6.APN 文件</h3>
 给苹果手机用的，
