@@ -8,7 +8,7 @@
 ">这个</a> ，感谢 @ACBingo</h1>
 
 
-<h1>后端推荐使用 <a href="https://github.com/glzjin/shadowsocks/wiki/%E8%AF%B4%E6%98%8E%E4%BB%A5%E5%8F%8A%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95">https://github.com/glzjin/shadowsocks/wiki/%E8%AF%B4%E6%98%8E%E4%BB%A5%E5%8F%8A%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95</a></h1>
+<h1>后端推荐使用 <a href="https://github.com/ACBingo/ss-panel-v3-mod/wiki/ubuntu%E5%AE%89%E8%A3%85%E5%AE%9E%E4%BE%8B">https://github.com/glzjin/shadowsocks/wiki/%E8%AF%B4%E6%98%8E%E4%BB%A5%E5%8F%8A%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95</a></h1>
 
 <h2>安装</h2>
 下面我来写一写详细的安装教程，供大家参考。
