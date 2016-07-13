@@ -5,7 +5,7 @@
 <h1>请不要尝试修改底部的版权信息，这是最起码的尊重。世界本就如此艰难，何必还要让它更艰难呢。</h1>
 
 
-后端推荐使用 <a href="https://github.com/glzjin/ssshell-jar/wiki/%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E">https://github.com/glzjin/ssshell-jar/wiki/%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E</a>
+后端推荐使用 <a href="https://github.com/glzjin/shadowsocks/wiki/%E8%AF%B4%E6%98%8E%E4%BB%A5%E5%8F%8A%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95">https://github.com/glzjin/shadowsocks/wiki/%E8%AF%B4%E6%98%8E%E4%BB%A5%E5%8F%8A%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95</a>
 
 <h2>安装</h2>
 下面我来写一写详细的安装教程，供大家参考。
@@ -81,13 +81,15 @@ OK，重启一下 nginx
 
 8.这一步现在已经不需要。
 
-9.安装 radius ，此处参考了 http://www.zhukun.net/archives/7455 ，在此表示感谢，但你不用点进去看他的安装方法，看下面的就OK 。此处只介绍怎么进行安装和对接。
+9.安装 radius ，不使用VPN的话，可以不进行这一步了，此处参考了 http://www.zhukun.net/archives/7455 ，在此表示感谢，但你不用点进去看他的安装方法，看下面的就OK 。此处只介绍怎么进行安装和对接。
 <pre>yum install perl-DBI freeradius freeradius-mysql freeradius-utils
 cd
 </pre>
 
 
 10.然后我们打开 phpmyadmin ,来配置数据库了。
+
+不使用VPN的话，可以不添加 Radius 的数据库了。
 
 先添加，创建一个数据库，并且添加一个用户。
 
@@ -103,6 +105,8 @@ OK，然后我们再对这个数据库创建一个用户，用于 ss-panel 通�
 
 <img src="https://www.zhaojin97.cn/wp-content/uploads/2016/03/5018e0a24698dccc255c54c46d16c1982016032506325926616.png" alt="https://www.zhaojin97.cn/wp-content/uploads/2016/03/5018e0a24698dccc255c54c46d16c1982016032506325926616.png" />
 
+这下面才是 ss-panel 的
+
 然后我们再给 ss-panel 整个用户和数据库。
 
 <img src="https://www.zhaojin97.cn/wp-content/uploads/2016/03/2c73d13118aa4264eef958fc892f9128201603250638472135.png" alt="https://www.zhaojin97.cn/wp-content/uploads/2016/03/2c73d13118aa4264eef958fc892f9128201603250638472135.png" />
@@ -113,7 +117,7 @@ OK，然后我们再对这个数据库创建一个用户，用于 ss-panel 通�
 
 导入完成，数据库这里就差不多了。
 
-11.回到 SSH，继续设置 Radius 。
+11.不使用VPN的话，可以不进行这一步了，回到 SSH，继续设置 Radius 。
 <pre>nano /etc/raddb/sql.conf
 </pre>
 配置login（用户名），password（密码），radius_db（数据库名）等字段
@@ -147,32 +151,8 @@ nano config/.config.php
 
 进行相应的配置
 
-前面的我就不说了，主要讲讲后面的。
-<pre>#glzjin's time
+都有中文，根据提示来就行了
 
-#文件储存地址 files.***.com
-global_url='http://files.ss.panel'
-
-#radius 数据库信息
-radius_db_host='localhost'
-radius_db_database='radius'
-radius_db_user='ss-panel-radius'
-radius_db_password=''
-radius_secret=''
-#通讯密钥
-
-#DirectAdmin 面板连接设置，这里可以自动将用户加入到邮件列表
-da_host=''
-da_port=''
-da_username=''
-da_password=''
-da_domain=''
-da_listname=''
-
-#多说评论设定，这里可以给用户进行讨论，而且可以自动登录多说的系统，体验不错
-duoshuo_shortname=''
-duoshuo_apptoken=''
-</pre>
 13.配置完了，就来创建管理员。不过这个管理的话，不会自动同步到 radius ，需要在网站上注册的才可以。
 <pre>php xcat createAdmin
 </pre>
