@@ -4,8 +4,11 @@
 <h1><strong>如果您认为这个项目帮到了你，欢迎<a href="https://www.zhaoj.in/donate-2">点击这里</a>给我一些鼓励，谢谢您。</strong></h1>
 <h1>请不要尝试修改底部的版权信息，这是最起码的尊重。世界本就如此艰难，何必还要让它更艰难呢。</h1>
 
+<h1>Ubuntu 下的安装可以看看<a href="https://github.com/ACBingo/ss-panel-v3-mod/wiki/ubuntu%E5%AE%89%E8%A3%85%E5%AE%9E%E4%BE%8B
+">这个</a> ，感谢 @ACBingo</h1>
 
-后端推荐使用 <a href="https://github.com/glzjin/shadowsocks/wiki/%E8%AF%B4%E6%98%8E%E4%BB%A5%E5%8F%8A%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95">https://github.com/glzjin/shadowsocks/wiki/%E8%AF%B4%E6%98%8E%E4%BB%A5%E5%8F%8A%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95</a>
+
+<h1>后端推荐使用 <a href="https://github.com/glzjin/shadowsocks/wiki/%E8%AF%B4%E6%98%8E%E4%BB%A5%E5%8F%8A%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95">https://github.com/glzjin/shadowsocks/wiki/%E8%AF%B4%E6%98%8E%E4%BB%A5%E5%8F%8A%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95</a></h1>
 
 <h2>安装</h2>
 下面我来写一写详细的安装教程，供大家参考。
