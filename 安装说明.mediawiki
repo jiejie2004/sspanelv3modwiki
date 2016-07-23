@@ -165,7 +165,7 @@ nano config/.config.php
 <pre>30 22 * * * php /home/wwwroot/ss.panel/xcat sendDiaryMail
 */1 * * * * php /home/wwwroot/ss.panel/xcat synclogin
 */1 * * * * php /home/wwwroot/ss.panel/xcat syncvpn
-0 0 * * * php /home/wwwroot/ss.panel/xcat dailyjob
+0 0 * * * php -n /home/wwwroot/ss.panel/xcat dailyjob
 */1 * * * * php /home/wwwroot/ss.panel/xcat checkjob    
 */1 * * * * php -n /home/wwwroot/ss.panel/xcat syncnas
 </pre>
@@ -179,15 +179,4 @@ nano config/.config.php
 
 比如 “香港 1 - Shadowsocks”
 
-2、顺序的具体参数如下
-<pre>0=SS
-1=VPN
-2=SSH
-3=PAC
-4=APN 描述文件外链
-5=Anyconnect
-6=APN
-7=PAC PLUS
-8=PAC PLUS PLUS
-</pre>
 有问题还麻烦留言哈。
