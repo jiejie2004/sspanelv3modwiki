@@ -12,11 +12,11 @@
 
 2.然后在管理员后台面板编辑一下用户。按照图上的指示编辑，然后保存。
 
-<a href="https://www.zhaoj.in/wp-content/uploads/2016/10/147790790713a90f7f8d8f15715e1b46d0dfe00dfe.png"><img class="alignnone size-large wp-image-3911" src="https://www.zhaoj.in/wp-content/uploads/2016/10/147790790713a90f7f8d8f15715e1b46d0dfe00dfe-1024x568.png" alt="qq%e6%88%aa%e5%9b%be20161031175714" width="1024" height="568" /></a>
+<img class="alignnone size-large wp-image-3911" src="https://www.zhaoj.in/wp-content/uploads/2016/10/147790790713a90f7f8d8f15715e1b46d0dfe00dfe-1024x568.png" alt="qq%e6%88%aa%e5%9b%be20161031175714" width="1024" height="568" />
 
 3.然后添加一个节点。看图上的指示。
 
-<a href="https://www.zhaoj.in/wp-content/uploads/2016/10/14779082911e0fadcac05f48109b6ce4f0b6cec626.png"><img class="alignnone size-large wp-image-3912" src="https://www.zhaoj.in/wp-content/uploads/2016/10/14779082911e0fadcac05f48109b6ce4f0b6cec626-1024x636.png" alt="qq%e6%88%aa%e5%9b%be20161031180223" width="1024" height="636" /></a>
+<img class="alignnone size-large wp-image-3912" src="https://www.zhaoj.in/wp-content/uploads/2016/10/14779082911e0fadcac05f48109b6ce4f0b6cec626-1024x636.png" alt="qq%e6%88%aa%e5%9b%be20161031180223" width="1024" height="636" />
 
 4.然后修改面板的 config/.config.php ，确保里面如下两段 已经按照你的意愿设置并且和后端上 userapiconfig.py 里的对应配置项一致。
 <pre class="lang:default decode:true ">#多用户混淆参数后缀
@@ -34,7 +34,7 @@ MU_REGEX = '%5m%id.%suffix'
 <h3>四.使用方法</h3>
 看到面板里你之前添加的节点的  tab ，每个选项卡你点开都会看到多出来一个你刚才添加的端口，点进去，扫码什么的连接就好。
 
-<a href="https://www.zhaoj.in/wp-content/uploads/2016/10/147790860030a333faf38b28f1acef7c79bc033eb6.png"><img class="alignnone size-full wp-image-3913" src="https://www.zhaoj.in/wp-content/uploads/2016/10/147790860030a333faf38b28f1acef7c79bc033eb6.png" alt="qq%e6%88%aa%e5%9b%be20161031180927" width="558" height="66" /></a>
+<img class="alignnone size-full wp-image-3913" src="https://www.zhaoj.in/wp-content/uploads/2016/10/147790860030a333faf38b28f1acef7c79bc033eb6.png" alt="qq%e6%88%aa%e5%9b%be20161031180927" width="558" height="66" />
 
 &nbsp;
 
