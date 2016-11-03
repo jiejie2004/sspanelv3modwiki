@@ -12,6 +12,8 @@
 
 2.然后在管理员后台面板编辑一下用户。按照图上的指示编辑，然后保存。
 
+2016年11月3日更新：自定义混淆方式可以并且推荐使用 tls1.2_ticket_auth .
+
 <img class="alignnone size-large wp-image-3911" src="https://www.zhaoj.in/wp-content/uploads/2016/10/147790790713a90f7f8d8f15715e1b46d0dfe00dfe-1024x568.png" alt="qq%e6%88%aa%e5%9b%be20161031175714" width="1024" height="568" />
 
 3.然后添加一个节点。看图上的指示。
