@@ -156,7 +156,7 @@ nano config/.config.php
 都有中文，根据提示来就行了
 
 13.配置完了，就来创建管理员。不过这个管理的话，不会自动同步到 radius ，需要在网站上注册的才可以。
-<pre>php xcat createAdmin
+<pre>php -n xcat createAdmin
 </pre>
 14.然后就是来同步一下用户。
 <pre>php xcat syncusers
