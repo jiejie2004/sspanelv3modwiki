@@ -1,7 +1,6 @@
 <h2>功能</h2>
 目前主要是支持了 VPN 自动开户，自动销毁，流量计入面板的总流量，以及弄了个公告系统，还有和 DirectAdmin 对接，还有可以支持 PAC 等方式的接入。
 
-<h1><strong>如果您认为这个项目帮到了你，欢迎<a href="https://www.zhaoj.in/donate-2">点击这里</a>给我一些鼓励，谢谢您。</strong></h1>
 <h1>请不要尝试修改底部的版权信息，这是最起码的尊重。世界本就如此艰难，何必还要让它更艰难呢。</h1>
 
 <h1>Ubuntu 下的安装可以看看<a href="https://github.com/ACBingo/ss-panel-v3-mod/wiki/ubuntu%E5%AE%89%E8%A3%85%E5%AE%9E%E4%BE%8B">这个</a> ，感谢 @ACBingo</h1>
