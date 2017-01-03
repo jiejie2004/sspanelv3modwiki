@@ -16,9 +16,9 @@
 演示环境：CentOS 6 X64
 
 1.首先通过 SSH 连接到远程服务器，安装 lnmp 一键包。
-<pre>wget http://soft.vpser.net/lnmp/lnmp1.2-full.tar.gz
-tar xvzf lnmp1.2-full.tar.gz
-cd lnmp1.2-full
+<pre>wget http://soft.vpser.net/lnmp/lnmp1.3-full.tar.gz
+tar xvzf lnmp1.3-full.tar.gz
+cd lnmp1.3-full
 ./install.sh
 </pre>
 2.请根据你的需求选择好安装组件，推荐如下。
@@ -42,7 +42,7 @@ cd lnmp1.2-full
 
 6.然后，来对 nginx 进行一些细节化配置。
 
-打开 /usr/local/nginx/conf/vhost/ss.panel.conf
+打开 /usr/local/nginx/conf/vhost/ss.conf
 
 然后添加下面这一段到 server 
 <pre>
@@ -53,11 +53,11 @@ location / {
 
 同时，root那一行改为
 <pre>
-root /home/wwwroot/ss.panel/public;
+root /home/wwwroot/ss/public;
 </pre>
 
 然后就是下载程序代码。
-<pre>cd /home/wwwroot/ss.panel
+<pre>cd /home/wwwroot/ss
 yum install git -y
 git clone https://github.com/syaseigen/ss-panel-v3-mod.git tmp && mv tmp/.git . && rm -rf tmp && git reset --hard
 chown -R root:root *
@@ -65,7 +65,7 @@ chmod -R 755 *
 chown -R www:www storage
 </pre>
 修改完了之后，到网站目录下进行一些修改。
-<pre>[root@vultr vhost]# cd /home/wwwroot/ss.panel/
+<pre>[root@vultr vhost]# cd /home/wwwroot/ss/
 [root@vultr ss.panel]# chattr -i .user.ini
 [root@vultr ss.panel]# mv .user.ini public
 [root@vultr ss.panel]# cd public
@@ -93,7 +93,7 @@ OK，重启一下 nginx
 
 12.然后让我们回到 ss-panel 的配置上来，
 
-cd /home/wwwroot/ss.panel
+cd /home/wwwroot/ss
 
 cp config/.config.php.example config/.config.php
 
